@@ -37,8 +37,6 @@ class CheckIsUserActivated
                 'social/handle/{provider}',
                 'logout',
                 'welcome',
-                'api/users',
-                'api/user/{id}',
             ];
 
             if (! in_array($currentRoute, $routesAllowed)) {
@@ -65,11 +63,11 @@ class CheckIsUserActivated
 
             if (in_array($currentRoute, $routesAllowed)) {
                 if ($user && $user->activated == 1) {
-                    /*if ($user->isAdmin()) {
+                    if ($user->isAdmin()) {
                         return redirect('home');
                     }
 
-                    return redirect('home');*/
+                    return redirect('home');
                 }
 
                 if (! $user) {

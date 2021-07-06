@@ -4,10 +4,7 @@ namespace App\Http\Controllers\API;
    
 use Illuminate\Http\Request;
 use App\Http\Controllers\API\BaseController as BaseController;
-use Illuminate\Support\Facades\Auth;
-use Validator;
-use App\Models\User;
-   
+use Validator;   
 class UserController extends BaseController
 {
 
@@ -15,7 +12,6 @@ class UserController extends BaseController
     {
         try{
             echo 'oui';
-            die();
             return $this->sendResponse($success, 'User retrieved');
         }
         catch( exception $e ){
