@@ -15,11 +15,22 @@ class Profile extends JsonResource
      */
     public function toArray($request)
     {
-        return [
-            'bio' => $this->id,
-            'twitter_username' => $this->twitter_username,
-            'github_username' => $this->github_username,
-            'avatar' => URL::to('/') . $this->avatar,
-        ];    
+        if(! is_null($this['avatar']))
+        {
+            return [
+                'bio' => $this['bio'],
+                'twitter_username' => $this['twitter_username'],
+                'github_username' => $this['github_username'],
+                'avatar' => URL::to('/') . $this['avatar'],
+            ]; 
+        }
+        else{
+            return [
+                'bio' => $this['bio'],
+                'twitter_username' => $this['twitter_username'],
+                'github_username' => $this['github_username'],
+                'avatar' => null,
+            ]; 
+        }   
     }
 }

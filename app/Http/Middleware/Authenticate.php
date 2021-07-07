@@ -54,7 +54,7 @@ class Authenticate extends Middleware
      */
     public function handle($request, Closure $next)
     {
-        if (! $this->auth->check() && ! str_contains(url()->current(), '/api/')) {
+        if (! $this->auth->check() && ! str_contains(url()->current(), '/api/') && ! str_contains(url()->current(), '/avatar/')) {
             return redirect()->to('/login')
                 ->with('status', 'success')
                 ->with('message', 'Please login.');

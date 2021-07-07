@@ -16,9 +16,19 @@ class UserController extends BaseController
 
     public function getUsers(Request $request)
     {
+        $users = User::all();
+        $profiles = Profile::all()->keyBy('id');
+        $success = $temp = array();
+
         try{
-            $success['response'] = 'oui';
-            return $this->sendResponse($success, 'Users retrieved.');
+            foreach($users as $user)
+            {
+                $profile = $profiles->get($user->id);
+                $temp['user'] = new UsersRessource($user);
+                $temp['profile'] = new ProfileRessource($profile);
+                array_push( $success, $temp);
+            }
+        return $this->sendResponse($success, 'Users retrieved.');
         }
         catch( exception $e ){
             return $this->sendError('Unauthorised.', ['error'=>'Unauthorised']);

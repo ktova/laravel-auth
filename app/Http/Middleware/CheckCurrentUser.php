@@ -20,7 +20,7 @@ class CheckCurrentUser
      */
     public function handle($request, Closure $next)
     {
-        if (! $request->user()) {
+        if (! $request->user() && ! str_contains(url()->current(), '/avatar/')) {
             abort(403, 'Unauthorized action.');
         }
 
