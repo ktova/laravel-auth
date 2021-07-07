@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Resources;
-use Illuminate\Http\Resources\Json\JsonResource;
 
-class Users extends JsonResource
+use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\URL;
+
+class Profile extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -14,9 +16,10 @@ class Users extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
-            'first_name' => $this->first_name,
-            'last_name' => $this->last_name,
-        ];
+            'bio' => $this->id,
+            'twitter_username' => $this->twitter_username,
+            'github_username' => $this->github_username,
+            'avatar' => URL::to('/') . $this->avatar,
+        ];    
     }
 }
