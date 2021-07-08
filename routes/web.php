@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 
 // Homepage Route
 Route::group(['middleware' => ['web', 'checkblocked']], function () {
-    Route::get('/', 'App\Http\Controllers\WelcomeController@welcome')->name('welcome');
+    Route::get('/', function(){
+        return redirect('/home');
+    });
     Route::get('/terms', 'App\Http\Controllers\TermsController@terms')->name('terms');
 });
 
@@ -130,6 +132,10 @@ Route::group(['middleware' => ['auth', 'activated', 'role:admin', 'activity', 't
     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
     Route::get('routes', 'App\Http\Controllers\AdminDetailsController@listRoutes');
     Route::get('active-users', 'App\Http\Controllers\AdminDetailsController@activeUsers');
+
+    Route::get('tournaments', 'App\Http\Controllers\AppController@tournaments');
+    Route::get('team', 'App\Http\Controllers\AppController@team');
+
 });
 
 Route::redirect('/php', '/phpinfo', 301);

@@ -52,15 +52,6 @@
                                 </dd>
                             @endif
 
-                            @if ($user->email && ($currentUser->id == $user->id || $currentUser->hasRole('admin')))
-                                <dt>
-                                    {{ trans('profile.showProfileEmail') }}
-                                </dt>
-                                <dd>
-                                    {{ $user->email }}
-                                </dd>
-                            @endif
-
                             @if ($user->profile)
                                 @if ($user->profile->theme_id && ($currentUser->id == $user->id || $currentUser->hasRole('admin')))
                                     <dt>
@@ -118,7 +109,7 @@
                                         {{ trans('profile.showProfileTeam') }}
                                     </dt>
                                     <dd>
-                                        {!! HTML::link('https://github.com/'.$user->profile->github_username, $user->profile->github_username, array('class' => 'github-link', 'target' => '_blank')) !!}
+                                        {!! $user->profile->team !!} 
                                     </dd>
                                 @endif
 
@@ -127,7 +118,7 @@
                                         {{ trans('profile.showProfileRank') }}
                                     </dt>
                                     <dd>
-                                        {!! HTML::link('https://github.com/'.$user->profile->github_username, $user->profile->github_username, array('class' => 'github-link', 'target' => '_blank')) !!}
+                                        {!! $user->profile->rank !!} 
                                     </dd>
                                 @endif
 
@@ -136,7 +127,7 @@
                                         {{ trans('profile.showProfileStatus') }}
                                     </dt>
                                     <dd>
-                                        {!! HTML::link('https://github.com/'.$user->profile->github_username, $user->profile->github_username, array('class' => 'github-link', 'target' => '_blank')) !!}
+                                        {!! $user->profile->status !!} 
                                     </dd>
                                 @endif
 
