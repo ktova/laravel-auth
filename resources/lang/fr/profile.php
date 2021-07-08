@@ -29,6 +29,9 @@ return [
     'showProfileTheme'           => 'Thème',
     'showProfileTwitterUsername' => 'Comte Twitter',
     'showProfileGitHubUsername'  => 'Compte Github',
+    'showProfileRank' => 'Rang',
+    'showProfileTeam' => 'Équipe',
+    'showProfileStatus' => 'Status',
 
     // USER profile page
     'showProfileTitle' => 'Profil :username',

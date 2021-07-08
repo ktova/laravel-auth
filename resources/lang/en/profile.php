@@ -29,6 +29,9 @@ return [
     'showProfileTheme'           => 'Theme',
     'showProfileTwitterUsername' => 'Twitter Username',
     'showProfileGitHubUsername'  => 'Github Username',
+    'showProfileRank' => 'Rank',
+    'showProfileTeam' => 'Team',
+    'showProfileStatus' => 'Status',
 
     // USER profile page
     'showProfileTitle' => ':username\'s Profile',
@@ -51,6 +54,11 @@ return [
 
     'label-twitter_username' => 'Your Twitter username:',
     'ph-twitter_username'    => 'Enter your Twitter username',
+
+    // Infos tag
+    'user-team' => 'Your team: ',
+    'user-rank' => 'Your rank: ',
+    'user-status' => 'Your status: ',
 
     // User Account Settings Tab
     'editTriggerAlt'        => 'Toggle User Menu',

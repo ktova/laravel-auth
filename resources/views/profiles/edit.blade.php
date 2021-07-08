@@ -133,6 +133,19 @@
                                                             @endif
                                                         </div>
                                                     </div>
+                                                    <div class="margin-bottom-2 form-group has-feedback {{ $errors->has('github_username') ? ' has-error ' : '' }}">
+                                                        {!! Form::label('user-team', trans('profile.user-team') , array('class' => 'col-12 control-label')); !!}
+                                                        {!! Form::label($user->profile->team) !!} 
+                                                    </div>
+                                                    <div class="margin-bottom-2 form-group has-feedback {{ $errors->has('github_username') ? ' has-error ' : '' }}">
+                                                        {!! Form::label('user-status', trans('profile.user-status') , array('class' => 'col-12 control-label')); !!}
+                                                        {!! $user->profile->status !!} 
+                                                    </div>
+                                                    <div class="margin-bottom-2 form-group has-feedback {{ $errors->has('github_username') ? ' has-error ' : '' }}">
+                                                        {!! Form::label('user-rank', trans('profile.user-rank') , array('class' => 'col-12 control-label')); !!}
+                                                        {!! $user->profile->rank !!} 
+                                                    </div>
+
                                                     <div class="form-group margin-bottom-2">
                                                         <div class="col-12">
                                                             {!! Form::button(

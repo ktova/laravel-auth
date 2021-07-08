@@ -112,6 +112,34 @@
                                         {!! HTML::link('https://github.com/'.$user->profile->github_username, $user->profile->github_username, array('class' => 'github-link', 'target' => '_blank')) !!}
                                     </dd>
                                 @endif
+
+                                @if ($user->profile->team)
+                                    <dt>
+                                        {{ trans('profile.showProfileTeam') }}
+                                    </dt>
+                                    <dd>
+                                        {!! HTML::link('https://github.com/'.$user->profile->github_username, $user->profile->github_username, array('class' => 'github-link', 'target' => '_blank')) !!}
+                                    </dd>
+                                @endif
+
+                                @if ($user->profile->rank)
+                                    <dt>
+                                        {{ trans('profile.showProfileRank') }}
+                                    </dt>
+                                    <dd>
+                                        {!! HTML::link('https://github.com/'.$user->profile->github_username, $user->profile->github_username, array('class' => 'github-link', 'target' => '_blank')) !!}
+                                    </dd>
+                                @endif
+
+                                @if ($user->profile->status)
+                                    <dt>
+                                        {{ trans('profile.showProfileStatus') }}
+                                    </dt>
+                                    <dd>
+                                        {!! HTML::link('https://github.com/'.$user->profile->github_username, $user->profile->github_username, array('class' => 'github-link', 'target' => '_blank')) !!}
+                                    </dd>
+                                @endif
+
                             @endif
 
                         </dl>

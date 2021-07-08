@@ -36,6 +36,9 @@ class Profile extends Model
         'user_profile_bg',
         'avatar',
         'avatar_status',
+        'team',
+        'rank',
+        'status',
     ];
 
     protected $casts = [
